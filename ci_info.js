@@ -52,22 +52,6 @@ module.exports = {
         branch:           env.CI_BRANCH,
         commit_sha:       env.CI_COMMIT_ID
       };
-    } else if (env.APPVEYOR) {
-      return {
-        name:             "appveyor",
-        build_identifier: env.APPVEYOR_BUILD_NUMBER,
-        branch:           env.APPVEYOR_REPO_BRANCH,
-        commit_sha:       env.APPVEYOR_REPO_COMMIT,
-        pull_request:     env.APPVEYOR_PULL_REQUEST_NUMBER
-      };
-    } else if (env.BUILDKITE) {
-      return {
-        name:             "buildkite",
-        build_identifier: env.BUILDKITE_BUILD_ID,
-        build_url:        env.BUILDKITE_BUILD_URL,
-        branch:           env.BUILDKITE_BRANCH,
-        commit_sha:       env.BUILDKITE_COMMIT
-      };
     } else {
       return {};
     }
