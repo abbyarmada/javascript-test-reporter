@@ -1,0 +1,5 @@
+name: codeclimate_coverage
+  service: reporter
+  command:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < ./coverage/lcov.info
